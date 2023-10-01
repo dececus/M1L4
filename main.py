@@ -16,12 +16,18 @@ async def hello(ctx):
     await ctx.send(f'Привет! Я бот {bot.user}!')
 
 @bot.command()
-async def heh(ctx, count_heh = 5):
-    await ctx.send("he" * count_heh)
-
-@bot.command()
 async def emoji(ctx):
     elements = ["😀", "😇", "😎", "😛", "🗿", "🐀", "💵"]
     await ctx.send(random.choice(elements))
 
-bot.run("MTE1NTUwMDI1ODMzMjI1MDIyMg.GiuxQV.vCfGsAbXg5Ewx4vnWVZBAtc4NMrMKo23Q4291E")
+@bot.command()
+async def cat(ctx):
+    elements = ['cat1.jpg', 'cat2.jpg', 'cat3.jpg', 'cat4.jpg', 'cat5.jpg']
+    await ctx.send(file=discord.File(random.choice(elements)))
+    
+@bot.command()
+async def meme(ctx):
+    elements = ['meme1.jpg', 'meme2.jpg', 'meme3.jpg', 'meme4.jpg', 'meme5.jpg']
+    await ctx.send(file=discord.File(random.choice(elements)))
+
+bot.run("MTE1NTUwMDI1ODMzMjI1MDIyMg.GAlEGt.mpQvOkQ1ZEQEz5Ug5MeXGPMRKtG5mYmph6Bin4")
